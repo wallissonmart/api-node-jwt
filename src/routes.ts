@@ -12,15 +12,12 @@ const userController = new UserController(userRepository);
 const tagRepository = new TagRepository();
 const tagController = new TagController(tagRepository);
 
-// Função de middleware para fazer o bind de req e res automaticamente
-// Função de middleware para fazer o bind de req e res automaticamente
 function bindController(controllerMethod: (this: any, req: Request, res: Response) => Promise<Response>) {
   return async function (this: any, req: Request, res: Response) {
     try {
       const result = await controllerMethod.call(this, req, res);
       return result;
     } catch (error) {
-      // Aqui você pode lidar com erros de forma centralizada, se desejar
       console.error('Erro no middleware de rota:', error);
       return res.status(500).json({ error: 'Erro interno do servidor' });
     }
