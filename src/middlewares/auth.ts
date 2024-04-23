@@ -46,7 +46,7 @@ export const authMiddleware = async (
       return res.status(error.statusCode).json({ error: error.message });
     }
 
-    res.status(500).json({ error: 'Erro interno do servidor' });
+    throw new Error()
   }
 };
 
