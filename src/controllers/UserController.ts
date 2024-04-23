@@ -146,15 +146,3 @@ export class UserController {
     return res.status(200).json(user);
   }
 }
-
-/*async getById(req: Request, res: Response) {
-  const { id } = req.params;
-
-  const user = await this.userRepository.findByID(parseInt(id));
-
-  if (!user) {
-    throw new BadRequestError('Usuário não encontrado!');
-  }
-
-  return res.status(200).json(user);
-}*/

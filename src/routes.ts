@@ -13,14 +13,11 @@ const userController = new UserController(userRepository);
 const tagRepository = new TagRepository();
 const tagController = new TagController(tagRepository);
 
-
-
 // Rotas públicas
 routes.post('/user', bindController(userController.create));
 routes.post('/login', bindController(userController.login));
 routes.get('/tags', bindController(tagController.getAll));
 
-// Middleware de autenticação
 routes.use(authMiddleware);
 
 // Rotas protegidas
