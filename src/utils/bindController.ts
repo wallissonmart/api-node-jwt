@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-type ControllerContext = {};
+type ControllerContext = object;
 
 export function bindController<T extends ControllerContext>(
   controllerMethod: (
