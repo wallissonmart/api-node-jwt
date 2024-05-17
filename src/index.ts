@@ -7,7 +7,7 @@ import { errorMiddleware } from './middlewares/error';
 
 const port = process.env.PORT || 3000;
 
-startDB();
+// startDB();
 
 const app = express();
 
